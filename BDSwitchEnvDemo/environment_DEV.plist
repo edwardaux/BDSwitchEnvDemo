@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>environment</key>
+	<string>DEV</string>
+	<key>appName</key>
+	<string>DEV</string>
+	<key>bundleId</key>
+	<string>com.bdf.myapp.DEV</string>
+	<key>mySetting</key>
+	<string>a dev value</string>
+</dict>
+</plist>
