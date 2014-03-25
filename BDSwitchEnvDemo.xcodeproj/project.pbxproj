@@ -299,7 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "dir=${PROJECT_DIR}/${PROJECT_NAME}\necho \"Starting environment configuration for project: \" $dir\n\n# environment variable from value passed in to xcodebuild.\n# if not specified, we default to DEV\nenv=${BDF_ENVIRONMENT}\nif [ -z \"$env\" ]\nthen\nenv=\"DEV\"\nfi\necho \"Using $env environment\"\n\n# copy the environment-specific file\ncp $dir/environment_$env.plist $dir/environment.plist\n\n# Date and time that we are running this build\nbuildDate=`date \"+%F %H:%M:%S\"`\ntodaysDay=`date \"+%d\"`\n\n# Last hash from the current branch\nlastCommitHash=`git log --pretty=format:\"%h\" -1`\n\n# app settings\nbundleId=`/usr/libexec/PlistBuddy -c \"Print :bundleId\" \"$dir/environment.plist\"`\nappName=`/usr/libexec/PlistBuddy -c \"Print :appName\" \"$dir/environment.plist\"`\n\nif [ \"$env\" != \"PROD\" ]\nthen\n# need to dynamically append today's day for non-prod\nappName=\"$appName $todaysDay\"\nfi\n\n# Build the preprocess file\ncd ${PROJECT_DIR}/${PROJECT_NAME}\npreprocessFile=\"environment_preprocess.h\"\necho \"Creating header file\"\n\necho -e \"//-----------------------------------------\" > $preprocessFile\necho -e \"// Auto generated file\" >> $preprocessFile\necho -e \"// Created $buildDate\" >> $preprocessFile\necho -e \"//-----------------------------------------\" >> $preprocessFile\necho -e \"\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT              $env\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT_LAST_COMMIT  $lastCommitHash\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT_BUNDLE_ID    $bundleId\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT_APP_NAME     $appName\" >> $preprocessFile\n\n# dump out file to build log\ncat $preprocessFile\n\n# Force the system to process the plist file\necho \"Touching plist at: \" ${PROJECT_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-Info.plist\ntouch ${PROJECT_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-Info.plist\n\n# done\necho \"Done.\"\n";
+			shellScript = "dir=${PROJECT_DIR}/${PROJECT_NAME}\necho \"Starting environment configuration for project: \" $dir\n\n# environment variable from value passed in to xcodebuild.\n# if not specified, we default to DEV\nenv=${BDF_ENVIRONMENT}\nif [ -z \"$env\" ]\nthen\nenv=\"DEV\"\nfi\necho \"Using $env environment\"\n\n# copy the environment-specific file\ncp $dir/environment_$env.plist $dir/environment.plist\n\n# Date and time that we are running this build\nbuildDate=`date \"+%F %H:%M:%S\"`\ntodaysDay=`date \"+%d\"`\n\n# Last hash from the current branch\nlastCommitHash=`git log --pretty=format:\"%h\" -1`\n\n# app settings\nappName=`/usr/libexec/PlistBuddy -c \"Print :appName\" \"$dir/environment.plist\"`\n\nif [ \"$env\" != \"PROD\" ]\nthen\n# need to dynamically append today's day for non-prod\nappName=\"$appName $todaysDay\"\nfi\n\n# Build the preprocess file\ncd ${PROJECT_DIR}/${PROJECT_NAME}\npreprocessFile=\"environment_preprocess.h\"\necho \"Creating header file\"\n\necho -e \"//-----------------------------------------\" > $preprocessFile\necho -e \"// Auto generated file\" >> $preprocessFile\necho -e \"// Created $buildDate\" >> $preprocessFile\necho -e \"//-----------------------------------------\" >> $preprocessFile\necho -e \"\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT              $env\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT_LAST_COMMIT  $lastCommitHash\" >> $preprocessFile\necho -e \"#define BDF_ENVIRONMENT_APP_NAME     $appName\" >> $preprocessFile\n\n# dump out file to build log\ncat $preprocessFile\n\n# Force the system to process the plist file\necho \"Touching plist at: \" ${PROJECT_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-Info.plist\ntouch ${PROJECT_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-Info.plist\n\n# done\necho \"Done.\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -371,6 +371,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BDF_BUNDLE_ID = com.bdf.myapp.DEV;
 				BDF_ENVIRONMENT = DEV;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -411,6 +412,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BDF_BUNDLE_ID = com.bdf.myapp;
 				BDF_ENVIRONMENT = PROD;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -451,6 +453,7 @@
 				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "22DE3756-5229-4872-ADAF-099873DFC3CB";
 				WRAPPER_EXTENSION = app;
 			};
 			name = DEV;
@@ -466,6 +469,7 @@
 				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C1D0E1E3-443C-4BB1-AF43-AED0E52A1853";
 				WRAPPER_EXTENSION = app;
 			};
 			name = PROD;
@@ -517,6 +521,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BDF_BUNDLE_ID = com.bdf.myapp.SYS;
 				BDF_ENVIRONMENT = SYS;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -563,6 +568,7 @@
 				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6D35C927-A951-4DD9-8B72-42AD0AF0386F";
 				WRAPPER_EXTENSION = app;
 			};
 			name = SYS;
@@ -652,6 +658,7 @@
 				BFB3815D18BA08840045139C /* PROD */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
 		};
 /* End XCConfigurationList section */
 	};

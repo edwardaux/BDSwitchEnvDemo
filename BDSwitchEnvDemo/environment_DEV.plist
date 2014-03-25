@@ -6,8 +6,6 @@
 	<string>DEV</string>
 	<key>appName</key>
 	<string>DEV</string>
-	<key>bundleId</key>
-	<string>com.bdf.myapp.DEV</string>
 	<key>mySetting</key>
 	<string>a dev value</string>
 </dict>
