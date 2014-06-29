@@ -240,6 +240,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "BlackDog Foundry";
 				TargetAttributes = {
+					BFB3811718B9F7A50045139C = {
+						DevelopmentTeam = 52FL8RJNNL;
+					};
 					BFB3813818B9F7A50045139C = {
 						TestTargetID = BFB3811718B9F7A50045139C;
 					};
@@ -447,13 +450,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_DEV;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDSwitchEnvDemo/BDSwitchEnvDemo-Prefix.pch";
 				INFOPLIST_FILE = "BDSwitchEnvDemo/BDSwitchEnvDemo-Info.plist";
 				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "22DE3756-5229-4872-ADAF-099873DFC3CB";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = DEV;
@@ -463,13 +468,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_PROD;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDSwitchEnvDemo/BDSwitchEnvDemo-Prefix.pch";
 				INFOPLIST_FILE = "BDSwitchEnvDemo/BDSwitchEnvDemo-Info.plist";
 				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C1D0E1E3-443C-4BB1-AF43-AED0E52A1853";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = PROD;
@@ -562,13 +569,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_SYS;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDSwitchEnvDemo/BDSwitchEnvDemo-Prefix.pch";
 				INFOPLIST_FILE = "BDSwitchEnvDemo/BDSwitchEnvDemo-Info.plist";
 				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6D35C927-A951-4DD9-8B72-42AD0AF0386F";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = SYS;
