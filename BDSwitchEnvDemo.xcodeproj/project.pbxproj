@@ -455,7 +455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDSwitchEnvDemo/BDSwitchEnvDemo-Prefix.pch";
 				INFOPLIST_FILE = "BDSwitchEnvDemo/BDSwitchEnvDemo-Info.plist";
-				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
+				INFOPLIST_PREFIX_HEADER = "${PROJECT_DIR}/${PROJECT_NAME}/environment_preprocess.h";
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -473,7 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDSwitchEnvDemo/BDSwitchEnvDemo-Prefix.pch";
 				INFOPLIST_FILE = "BDSwitchEnvDemo/BDSwitchEnvDemo-Info.plist";
-				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
+				INFOPLIST_PREFIX_HEADER = "${PROJECT_DIR}/${PROJECT_NAME}/environment_preprocess.h";
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -574,7 +574,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BDSwitchEnvDemo/BDSwitchEnvDemo-Prefix.pch";
 				INFOPLIST_FILE = "BDSwitchEnvDemo/BDSwitchEnvDemo-Info.plist";
-				INFOPLIST_PREFIX_HEADER = environment_preprocess.h;
+				INFOPLIST_PREFIX_HEADER = "${PROJECT_DIR}/${PROJECT_NAME}/environment_preprocess.h";
 				INFOPLIST_PREPROCESS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
